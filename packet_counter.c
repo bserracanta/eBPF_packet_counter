@@ -27,6 +27,8 @@ int packet_counter(struct xdp_md *ctx)
                 struct udphdr *udp = (void *)ip + sizeof(*ip);
                 if ((void *)udp + sizeof(*udp) <= data_end)
                 {
+                    //htons() modifies byte order (Endianness), having the most significant first
+                    // host-to-network short byte order translation
                     u64 value = htons(udp->dest);
                     counter.increment(value);
                 }
