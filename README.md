@@ -2,18 +2,22 @@
 
 [Summary from this project](https://gist.github.com/satrobit/17eb0ddd4e122425d96f60f45def9627)
 
+[Interesting explanation: part 1](https://www.ferrisellis.com/content/ebpf_past_present_future/)
+
+[Interesting explanation: Part 2](https://www.ferrisellis.com/content/ebpf_syscall_and_maps/)
+
 ### XDP Actions ###
 
+Express Data Path (XDP) provides a data path which we can intercept or even edit packets using an eBPF program. 
+
+
 Action  | Definition
-------------- | -------------
-XDP_PASS  | Let the packet continue through the network stack
+-------------  | -------------
+XDP_PASS       | Let the packet continue through the network stack
 XDP_DROP       | Silently drop the packet
 XDP_ABORTED    | Drop the packet with trace point exception
 XDP_TX         | Bounce the packet back to the same NIC it arrived on
 XDP_REDIRECT   | Redirect the packet to another NIC or user space socket via the AF_XDP address family
-
-
-
 
 
 ### XDP Execution ###
@@ -24,17 +28,17 @@ XDP_REDIRECT   | Redirect the packet to another NIC or user space socket via the
 
 ### BPF Maps: ###
 
-Action  | Definition
-------------- | -------------
-BPF_TABLE      | Content Cell
-BPF_HASH       | Content Cell
-BPF_ARRAY      | Content Cell
-BPF_HISTOGRAM  | Content Cell
-BPF_PERF_ARRAY | Content Cell
+1. BPF_TABLE
+2. BPF_HASH
+3. BPF_ARRAY
+4. BPF_HISTOGRAM
+5. BPF_PERF_ARRAY
 
 ### BCC ###
 
-BCC is a toolkit for creating eBPF programs with bindings to a few languages like Python, Lua and etc. 
+BPF Compiler Collection (BCC) is a toolkit for creating eBPF programs with bindings to a few languages like Python, Lua and etc. 
+
+Very useful for providing statistics after stopping the eBPF program execution.
 
 ----
 
