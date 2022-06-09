@@ -1,7 +1,7 @@
 from bcc import BPF
 from bcc.utils import printb
 
-device = "lo"
+device = "ens224"
 b = BPF(src_file="packet_counter.c")
 fn = b.load_func("packet_counter", BPF.XDP)
 b.attach_xdp(device, fn, 0)
@@ -11,7 +11,7 @@ try:
 except KeyboardInterrupt:
 
     dist = b.get_table("counter")
-    for k, v in sorted(dist.items()):
+    for k, v in dist.items():
         print("DEST_PORT : %10d, COUNT : %10d" % (k.value, v.value))
 
 b.remove_xdp(device, 0)
