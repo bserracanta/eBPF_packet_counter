@@ -40,6 +40,8 @@ BPF Compiler Collection (BCC) is a toolkit for creating eBPF programs with bindi
 
 Very useful for providing statistics after stopping the eBPF program execution.
 
+[BCC reference guide](https://github.com/iovisor/bcc/blob/master/docs/reference_guide.md#map-apis) contains BPF map functions and BCC python map APIs.
+
 ----
 
 ## Execution ##

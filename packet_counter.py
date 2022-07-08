@@ -10,8 +10,8 @@ try:
     b.trace_print()
 except KeyboardInterrupt:
 
-    dist = b.get_table("counter")
+    dist = b.get_table("table")
     for k, v in dist.items():
-        print("DEST_PORT : %10d, COUNT : %10d" % (k.value, v.value))
+        print("Tuple : %10d, COUNT : %10d" % (k.value, v.value))
 
 b.remove_xdp(device, 0)
